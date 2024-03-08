@@ -1,6 +1,7 @@
+
 # Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning
 
-This repository contains the code for the ArXiv preprint [Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning](https://arxiv.org/abs/2402.17510),  by [Maurits Bleeker](https://mauritsbleeker.github.io)<sup>1</sup>, [Mariya Hendriksen](https://mariyahendriksen.github.io)<sup>1</sup>. [Andrew Yates](https://andrewyates.net)<sup>1</sup>, and [Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/)<sup>1</sup>.
+This repository contains the code for the ArXiv preprint [Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning](https://arxiv.org/abs/2402.17510),  by [Maurits Bleeker](https://mauritsbleeker.github.io)<sup>1</sup>, [Mariya Hendriksen](https://mariyahendriksen.github.io)<sup>1</sup>, [Andrew Yates](https://andrewyates.net)<sup>1</sup>, and [Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/)<sup>1</sup>.
 
 The implementation builds upon the codebase of [Latent Target Decoding](https://github.com/MauritsBleeker/reducing-predictive-feature-suppression/).
 
@@ -8,7 +9,7 @@ The implementation builds upon the codebase of [Latent Target Decoding](https://
 
 ## Requirements
 
-To set up the environment, install the requirements using the following command:
+To set up the environment, install the requirements using the provided YAML file:
 
 ```angular2html
 conda env create --file src/environment.yaml
@@ -28,10 +29,9 @@ For local development, execute the following command:
 python src/trainer.py --yaml_file src/configs/{f30k, coco}/development_local.yaml
 ```
 
-To train a model run `python src/trainer.py` and provide a base config in YAML format using the `--yaml_file` flag: `--yaml_file <config path.yaml>`. 
+To train a model run `python src/trainer.py` and provide a base config in YAML format using `--yaml_file <config path.yaml>`. 
 
-You can override specific hyperparameters by using command line flags. For example: 
-
+Hyperparameters can be overridden using command line flags. For example:
 ```angular2html
 python src/trainer.py --yaml_file src/configs/f30k/development_local.yaml --experiment.wandb_project <your project name>
 ```
@@ -44,26 +44,23 @@ All training and evaluation were conducted using a SLURM-based scheduling system
 
 We implemented a PyTorch Dataloader class that loads the images from the memory of the compute node the training runs on. The captions are loaded from either the Flickr30k or MS-COCO annotation file.
 
-Please update the *.yaml config with the right file paths.
+Update the *.yaml config with the right file paths.
 
 ```angular2html
-
 img_path:
 annotation_file:
 annotation_path:
-
 ```
 
 
 ### Vocabulary class
 
-To create the vocabulary class, please run:
+To create the vocabulary class, run:
 
 ```angular2html
 python utils/vocab.py 
-
 ```
-With the correct input flags.
+With the appropriate input flags.
 
 
 ### Job files
@@ -74,7 +71,7 @@ The shortcut experiments (Section 4) are available in the `shortcuts` folder, th
 
 ## Evaluation
 
-To reproduce the results in Section 3, run the following evaluation script (ensure correct file paths).
+To reproduce results from Section 3, run the following evaluation script (ensure correct file paths).
 
 ```angular2html
 sbatch src/jobs/{coco, f30k}/snellius/shortcuts/{clip, vse}/{clip, vse}_{coco, f30k}_shortcut_experiments_eval.job
