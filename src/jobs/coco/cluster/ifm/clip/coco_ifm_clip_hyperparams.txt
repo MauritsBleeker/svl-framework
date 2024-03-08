@@ -1,0 +1,12 @@
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_baseline_infonce --criterion.name infonce
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_005 --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.05
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_01 --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.1
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_02 --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.2
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_05 --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.5
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_1 --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 1.0
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_baseline_infonce_us --criterion.name infonce --shortcuts.use_shortcuts True
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_005_us --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.05 --shortcuts.use_shortcuts True
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_01_us --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.1 --shortcuts.use_shortcuts True
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_02_us --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.2 --shortcuts.use_shortcuts True
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_05_us --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 0.5 --shortcuts.use_shortcuts True
+--experiment.wandb_project ifm --experiment.experiment_name coco_clip_ifm_infonce_1_us --criterion.name infonce --criterion.ifm.use_ifm True --criterion.ifm.epsilon 1.0 --shortcuts.use_shortcuts True

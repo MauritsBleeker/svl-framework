@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -t 04:00:00
+#SBATCH -N 1
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=25gb
+#SBATCH --gpus=1
+#SBATCH --partition=gpu
+#SBATCH --array=1-37
+
+source <path to conda.sh>
+conda activate contrastive-shortcuts
+
+HPARAMS_FILE=$(pwd)/clip_f30k_shortcuts_hyperparams.txt
+
+cd <path to project root>
+python ./src/trainer.py --yaml_file ./src/configs/f30k/shortcuts_clip.yaml --wandb_user <wandb username>  $(head -$SLURM_ARRAY_TASK_ID $HPARAMS_FILE | tail -1)

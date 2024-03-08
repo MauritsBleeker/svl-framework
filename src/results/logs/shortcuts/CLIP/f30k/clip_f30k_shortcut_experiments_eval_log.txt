@@ -1,0 +1,316 @@
+BASELINE CLIP finetuend on F30K
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+MODEL: f30k_clip_baseline_finetune
+2023-06-28 14:38:10,101 Loading the test evaluation set
+2023-06-28 14:38:10,197 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:38:20,574 Image to text (r@1, r@5, r@10, medr, meanr): 86.6, 96.7, 99.0, 1.0, 1.6
+2023-06-28 14:38:20,574 Text to image (r@1, r@5, r@10, medr, meanr): 72.6, 92.0, 96.0, 1.0, 3.0
+2023-06-28 14:38:20,574 Recall sum: 542.80
+2023-06-28 14:38:20,574 Image to text r-precision: 0.69
+
+CLIP Zero-Shot
+
+2023-06-28 14:38:55,941 Loading the test evaluation set
+2023-06-28 14:38:56,041 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:39:05,411 Image to text (r@1, r@5, r@10, medr, meanr): 80.0, 95.0, 97.9, 1.0, 2.0
+2023-06-28 14:39:05,414 Text to image (r@1, r@5, r@10, medr, meanr): 57.3, 83.1, 90.0, 1.0, 6.2
+2023-06-28 14:39:05,414 Recall sum: 503.32
+2023-06-28 14:39:05,414 Image to text r-precision: 0.57
+
+BASELINE - SHORTCUTS ON ONE MODALITY
+
+MODEL: f30k_clip_images_only_shortcuts
+2023-06-28 14:39:17,841 Loading the test evaluation set
+2023-06-28 14:39:18,290 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:39:27,720 Image to text (r@1, r@5, r@10, medr, meanr): 88.2, 97.6, 99.3, 1.0, 1.4
+2023-06-28 14:39:27,722 Text to image (r@1, r@5, r@10, medr, meanr): 72.7, 92.4, 96.0, 1.0, 2.9
+2023-06-28 14:39:27,722 Recall sum: 546.22
+2023-06-28 14:39:27,722 Image to text r-precision: 0.69
+
+MODEL: f30k_clip_captions_only_shortcuts
+2023-06-28 14:39:39,861 Loading the test evaluation set
+2023-06-28 14:39:40,299 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:39:49,669 Image to text (r@1, r@5, r@10, medr, meanr): 87.7, 97.2, 99.0, 1.0, 1.5
+2023-06-28 14:39:49,670 Text to image (r@1, r@5, r@10, medr, meanr): 72.3, 92.3, 95.8, 1.0, 2.9
+2023-06-28 14:39:49,670 Recall sum: 544.34
+2023-06-28 14:39:49,671 Image to text r-precision: 0.69
+
+BASELINES + UNIQUE SHORTCUTS
+
+MODEL: f30k_clip_unique_shortcuts
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:40:01,542 Loading the test evaluation set
+2023-06-28 14:40:01,971 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:40:11,329 Image to text (r@1, r@5, r@10, medr, meanr): 59.7, 84.7, 90.4, 1.0, 5.5
+2023-06-28 14:40:11,331 Text to image (r@1, r@5, r@10, medr, meanr): 43.1, 73.9, 83.7, 2.0, 9.2
+2023-06-28 14:40:11,331 Recall sum: 435.48
+2023-06-28 14:40:11,331 Image to text r-precision: 0.47
+
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:40:19,681 Loading the test evaluation set
+2023-06-28 14:40:20,106 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:40:29,462 Image to text (r@1, r@5, r@10, medr, meanr): 100.0, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:40:29,463 Text to image (r@1, r@5, r@10, medr, meanr): 100.0, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:40:29,464 Recall sum: 599.94
+2023-06-28 14:40:29,464 Image to text r-precision: 1.00
+
+Number of bits shortcuts
+
+MODEL: f30k_clip_bits_shortcuts_nb_0
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:40:41,525 Loading the test evaluation set
+2023-06-28 14:40:41,962 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:40:51,385 Image to text (r@1, r@5, r@10, medr, meanr): 87.6, 98.1, 99.0, 1.0, 1.5
+2023-06-28 14:40:51,387 Text to image (r@1, r@5, r@10, medr, meanr): 73.5, 92.5, 96.3, 1.0, 2.9
+2023-06-28 14:40:51,387 Recall sum: 547.02
+2023-06-28 14:40:51,387 Image to text r-precision: 0.70
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:40:59,855 Loading the test evaluation set
+2023-06-28 14:41:00,289 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:41:09,789 Image to text (r@1, r@5, r@10, medr, meanr): 87.8, 97.3, 98.9, 1.0, 1.6
+2023-06-28 14:41:09,790 Text to image (r@1, r@5, r@10, medr, meanr): 73.0, 92.0, 95.8, 1.0, 3.0
+2023-06-28 14:41:09,790 Recall sum: 544.80
+2023-06-28 14:41:09,790 Image to text r-precision: 0.69
+
+MODEL: f30k_clip_bits_shortcuts_nb_1
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:41:21,906 Loading the test evaluation set
+2023-06-28 14:41:22,338 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:41:31,762 Image to text (r@1, r@5, r@10, medr, meanr): 88.7, 97.4, 99.4, 1.0, 1.4
+2023-06-28 14:41:31,763 Text to image (r@1, r@5, r@10, medr, meanr): 72.8, 92.9, 95.8, 1.0, 3.0
+2023-06-28 14:41:31,763 Recall sum: 547.04
+2023-06-28 14:41:31,763 Image to text r-precision: 0.69
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:41:40,166 Loading the test evaluation set
+2023-06-28 14:41:40,599 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:41:50,030 Image to text (r@1, r@5, r@10, medr, meanr): 91.9, 98.8, 99.6, 1.0, 1.3
+2023-06-28 14:41:50,031 Text to image (r@1, r@5, r@10, medr, meanr): 79.6, 95.4, 97.8, 1.0, 2.2
+2023-06-28 14:41:50,032 Recall sum: 563.14
+2023-06-28 14:41:50,032 Image to text r-precision: 0.76
+
+MODEL: f30k_clip_bits_shortcuts_nb_2
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:42:02,046 Loading the test evaluation set
+2023-06-28 14:42:02,478 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:42:11,907 Image to text (r@1, r@5, r@10, medr, meanr): 86.0, 97.5, 99.2, 1.0, 1.6
+2023-06-28 14:42:11,909 Text to image (r@1, r@5, r@10, medr, meanr): 72.5, 92.1, 95.6, 1.0, 2.9
+2023-06-28 14:42:11,909 Recall sum: 542.88
+2023-06-28 14:42:11,909 Image to text r-precision: 0.69
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:42:20,350 Loading the test evaluation set
+2023-06-28 14:42:20,783 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:42:30,269 Image to text (r@1, r@5, r@10, medr, meanr): 94.3, 99.2, 99.6, 1.0, 1.2
+2023-06-28 14:42:30,270 Text to image (r@1, r@5, r@10, medr, meanr): 84.4, 97.2, 98.7, 1.0, 1.7
+2023-06-28 14:42:30,270 Recall sum: 573.38
+2023-06-28 14:42:30,270 Image to text r-precision: 0.81
+
+MODEL: f30k_clip_bits_shortcuts_nb_3
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:42:42,343 Loading the test evaluation set
+2023-06-28 14:42:42,783 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:42:52,210 Image to text (r@1, r@5, r@10, medr, meanr): 86.9, 96.8, 98.4, 1.0, 1.7
+2023-06-28 14:42:52,211 Text to image (r@1, r@5, r@10, medr, meanr): 70.7, 91.3, 95.4, 1.0, 3.1
+2023-06-28 14:42:52,211 Recall sum: 539.48
+2023-06-28 14:42:52,211 Image to text r-precision: 0.67
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:43:00,606 Loading the test evaluation set
+2023-06-28 14:43:01,042 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:43:10,480 Image to text (r@1, r@5, r@10, medr, meanr): 95.5, 99.6, 100.0, 1.0, 1.1
+2023-06-28 14:43:10,481 Text to image (r@1, r@5, r@10, medr, meanr): 88.6, 98.5, 99.5, 1.0, 1.3
+2023-06-28 14:43:10,481 Recall sum: 581.72
+2023-06-28 14:43:10,481 Image to text r-precision: 0.85
+
+MODEL: f30k_clip_bits_shortcuts_nb_4
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:43:22,517 Loading the test evaluation set
+2023-06-28 14:43:22,954 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:43:32,415 Image to text (r@1, r@5, r@10, medr, meanr): 85.9, 97.2, 98.5, 1.0, 1.7
+2023-06-28 14:43:32,416 Text to image (r@1, r@5, r@10, medr, meanr): 70.3, 91.3, 95.2, 1.0, 3.2
+2023-06-28 14:43:32,416 Recall sum: 538.42
+2023-06-28 14:43:32,416 Image to text r-precision: 0.67
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:43:40,877 Loading the test evaluation set
+2023-06-28 14:43:41,309 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:43:50,723 Image to text (r@1, r@5, r@10, medr, meanr): 97.3, 99.8, 99.9, 1.0, 1.1
+2023-06-28 14:43:50,724 Text to image (r@1, r@5, r@10, medr, meanr): 91.8, 99.4, 99.8, 1.0, 1.2
+2023-06-28 14:43:50,724 Recall sum: 587.92
+2023-06-28 14:43:50,724 Image to text r-precision: 0.89
+
+MODEL: f30k_clip_bits_shortcuts_nb_5
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:44:02,775 Loading the test evaluation set
+2023-06-28 14:44:03,213 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:44:12,612 Image to text (r@1, r@5, r@10, medr, meanr): 83.2, 96.3, 97.9, 1.0, 2.0
+2023-06-28 14:44:12,614 Text to image (r@1, r@5, r@10, medr, meanr): 68.3, 90.8, 95.1, 1.0, 3.5
+2023-06-28 14:44:12,614 Recall sum: 531.72
+2023-06-28 14:44:12,614 Image to text r-precision: 0.65
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:44:21,035 Loading the test evaluation set
+2023-06-28 14:44:21,470 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:44:30,804 Image to text (r@1, r@5, r@10, medr, meanr): 97.9, 99.9, 100.0, 1.0, 1.0
+2023-06-28 14:44:30,805 Text to image (r@1, r@5, r@10, medr, meanr): 94.3, 99.7, 99.9, 1.0, 1.2
+2023-06-28 14:44:30,805 Recall sum: 591.76
+2023-06-28 14:44:30,805 Image to text r-precision: 0.92
+
+MODEL: f30k_clip_bits_shortcuts_nb_6
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:44:42,985 Loading the test evaluation set
+2023-06-28 14:44:43,419 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:44:52,726 Image to text (r@1, r@5, r@10, medr, meanr): 83.9, 96.3, 98.3, 1.0, 2.0
+2023-06-28 14:44:52,727 Text to image (r@1, r@5, r@10, medr, meanr): 67.7, 89.9, 94.7, 1.0, 3.7
+2023-06-28 14:44:52,727 Recall sum: 530.90
+2023-06-28 14:44:52,727 Image to text r-precision: 0.64
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:45:01,123 Loading the test evaluation set
+2023-06-28 14:45:01,559 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:45:11,000 Image to text (r@1, r@5, r@10, medr, meanr): 98.9, 99.9, 100.0, 1.0, 1.0
+2023-06-28 14:45:11,002 Text to image (r@1, r@5, r@10, medr, meanr): 96.5, 99.9, 100.0, 1.0, 1.1
+2023-06-28 14:45:11,002 Recall sum: 595.16
+2023-06-28 14:45:11,002 Image to text r-precision: 0.95
+
+MODEL: f30k_clip_bits_shortcuts_nb_7
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:45:22,982 Loading the test evaluation set
+2023-06-28 14:45:23,423 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:45:32,777 Image to text (r@1, r@5, r@10, medr, meanr): 81.1, 94.9, 97.0, 1.0, 2.2
+2023-06-28 14:45:32,778 Text to image (r@1, r@5, r@10, medr, meanr): 67.1, 89.5, 94.0, 1.0, 3.8
+2023-06-28 14:45:32,778 Recall sum: 523.64
+2023-06-28 14:45:32,778 Image to text r-precision: 0.63
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:45:41,182 Loading the test evaluation set
+2023-06-28 14:45:41,613 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:45:50,962 Image to text (r@1, r@5, r@10, medr, meanr): 99.2, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:45:50,963 Text to image (r@1, r@5, r@10, medr, meanr): 97.6, 99.9, 100.0, 1.0, 1.1
+2023-06-28 14:45:50,963 Recall sum: 596.72
+2023-06-28 14:45:50,963 Image to text r-precision: 0.96
+
+MODEL: f30k_clip_bits_shortcuts_nb_8
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:46:02,970 Loading the test evaluation set
+2023-06-28 14:46:03,403 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:46:12,753 Image to text (r@1, r@5, r@10, medr, meanr): 79.3, 95.4, 98.1, 1.0, 1.9
+2023-06-28 14:46:12,754 Text to image (r@1, r@5, r@10, medr, meanr): 64.3, 88.9, 94.1, 1.0, 3.9
+2023-06-28 14:46:12,754 Recall sum: 520.10
+2023-06-28 14:46:12,754 Image to text r-precision: 0.61
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:46:21,208 Loading the test evaluation set
+2023-06-28 14:46:21,643 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:46:31,028 Image to text (r@1, r@5, r@10, medr, meanr): 99.8, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:46:31,029 Text to image (r@1, r@5, r@10, medr, meanr): 98.7, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:46:31,030 Recall sum: 598.48
+2023-06-28 14:46:31,030 Image to text r-precision: 0.98
+
+MODEL: f30k_clip_bits_shortcuts_nb_9
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:46:43,302 Loading the test evaluation set
+2023-06-28 14:46:43,734 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:46:53,181 Image to text (r@1, r@5, r@10, medr, meanr): 76.4, 92.8, 96.7, 1.0, 2.6
+2023-06-28 14:46:53,182 Text to image (r@1, r@5, r@10, medr, meanr): 62.0, 86.8, 92.4, 1.0, 4.8
+2023-06-28 14:46:53,182 Recall sum: 507.06
+2023-06-28 14:46:53,183 Image to text r-precision: 0.59
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:47:01,617 Loading the test evaluation set
+2023-06-28 14:47:02,044 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:47:11,435 Image to text (r@1, r@5, r@10, medr, meanr): 99.8, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:47:11,436 Text to image (r@1, r@5, r@10, medr, meanr): 99.0, 100.0, 100.0, 1.0, 1.2
+2023-06-28 14:47:11,436 Recall sum: 598.78
+2023-06-28 14:47:11,436 Image to text r-precision: 0.98
+
+MODEL: f30k_clip_bits_shortcuts_nb_10
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:47:23,496 Loading the test evaluation set
+2023-06-28 14:47:23,931 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:47:33,408 Image to text (r@1, r@5, r@10, medr, meanr): 76.1, 93.0, 96.3, 1.0, 2.5
+2023-06-28 14:47:33,409 Text to image (r@1, r@5, r@10, medr, meanr): 60.6, 85.4, 91.5, 1.0, 4.9
+2023-06-28 14:47:33,409 Recall sum: 502.86
+2023-06-28 14:47:33,409 Image to text r-precision: 0.58
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:47:41,744 Loading the test evaluation set
+2023-06-28 14:47:42,173 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:47:51,582 Image to text (r@1, r@5, r@10, medr, meanr): 99.6, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:47:51,584 Text to image (r@1, r@5, r@10, medr, meanr): 99.2, 100.0, 100.0, 1.0, 1.1
+2023-06-28 14:47:51,584 Recall sum: 598.76
+2023-06-28 14:47:51,584 Image to text r-precision: 0.99
+
+MODEL: f30k_clip_bits_shortcuts_nb_11
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:48:03,591 Loading the test evaluation set
+2023-06-28 14:48:04,023 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:48:13,436 Image to text (r@1, r@5, r@10, medr, meanr): 72.3, 90.1, 94.9, 1.0, 2.8
+2023-06-28 14:48:13,437 Text to image (r@1, r@5, r@10, medr, meanr): 58.5, 84.1, 90.7, 1.0, 5.1
+2023-06-28 14:48:13,438 Recall sum: 490.54
+2023-06-28 14:48:13,438 Image to text r-precision: 0.54
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:48:21,885 Loading the test evaluation set
+2023-06-28 14:48:22,316 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:48:31,680 Image to text (r@1, r@5, r@10, medr, meanr): 100.0, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:48:31,682 Text to image (r@1, r@5, r@10, medr, meanr): 99.6, 100.0, 100.0, 1.0, 1.1
+2023-06-28 14:48:31,682 Recall sum: 599.60
+2023-06-28 14:48:31,682 Image to text r-precision: 0.99
+
+MODEL: f30k_clip_bits_shortcuts_nb_12
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 16:46:28,691 Loading the test evaluation set
+2023-06-28 16:46:29,183 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 16:46:40,363 Image to text (r@1, r@5, r@10, medr, meanr): 70.6, 91.3, 95.2, 1.0, 3.1
+2023-06-28 16:46:40,366 Text to image (r@1, r@5, r@10, medr, meanr): 55.8, 82.8, 89.8, 1.0, 5.8
+2023-06-28 16:46:40,366 Recall sum: 485.44
+2023-06-28 16:46:40,366 Image to text r-precision: 0.54
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 16:46:50,788 Loading the test evaluation set
+2023-06-28 16:46:51,278 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 16:47:01,490 Image to text (r@1, r@5, r@10, medr, meanr): 99.9, 100.0, 100.0, 1.0, 1.0
+2023-06-28 16:47:01,493 Text to image (r@1, r@5, r@10, medr, meanr): 99.8, 100.0, 100.0, 1.0, 1.1
+2023-06-28 16:47:01,493 Recall sum: 599.64
+2023-06-28 16:47:01,493 Image to text r-precision: 1.00
+
+MODEL: f30k_clip_bits_shortcuts_nb_13
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 14:48:43,716 Loading the test evaluation set
+2023-06-28 14:48:44,157 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:48:53,503 Image to text (r@1, r@5, r@10, medr, meanr): 71.2, 90.8, 95.4, 1.0, 3.1
+2023-06-28 14:48:53,504 Text to image (r@1, r@5, r@10, medr, meanr): 53.9, 82.3, 89.3, 1.0, 6.0
+2023-06-28 14:48:53,504 Recall sum: 482.90
+2023-06-28 14:48:53,504 Image to text r-precision: 0.53
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 14:49:01,896 Loading the test evaluation set
+2023-06-28 14:49:02,328 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 14:49:11,809 Image to text (r@1, r@5, r@10, medr, meanr): 100.0, 100.0, 100.0, 1.0, 1.0
+2023-06-28 14:49:11,810 Text to image (r@1, r@5, r@10, medr, meanr): 99.8, 100.0, 100.0, 1.0, 1.1
+2023-06-28 14:49:11,810 Recall sum: 599.76
+2023-06-28 14:49:11,810 Image to text r-precision: 1.00

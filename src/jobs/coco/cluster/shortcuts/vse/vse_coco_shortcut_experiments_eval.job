@@ -1,0 +1,68 @@
+#!/bin/bash
+#SBATCH -t 4:00:00
+#SBATCH -N 1
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=25gb
+#SBATCH --gpus=1
+#SBATCH --partition=gpu
+#SBATCH -o ./src/logs/vse_coco_shortcut_experiments_eval.out
+
+
+source <path to conda.sh>
+conda activate contrastive-shortcuts
+
+
+DATASET=coco
+MODELS_DIR=./out/$DATASET/shortcuts/vse
+EVAL_SCRIPT_PATH=./src/evaluation.py
+MODEL_TYPE=model_last.pth # [model_last.pth, model_best.pth]
+
+
+##################################################################
+echo 'VSEPP FINE-TUNED on F30K'
+##################################################################
+
+##################################################################
+echo 'SHORTCUTS ON ONE MODALITY'
+##################################################################
+declare -a models=(
+                "coco_vse_tune_img_enc_infonce_cap_only_shuffle"
+                "coco_vse_tune_img_enc_infonce_img_only_shuffle"
+                )
+for MODEL in "${models[@]}"
+do
+   echo MODEL: $MODEL
+   echo 'Evaluation.on_image: False; Evaluation.on_caption: False'
+   MODEL_PATH=$MODELS_DIR/$MODEL/$MODEL_TYPE
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data True \
+    --shortcuts.evaluation.on_image False \
+    --shortcuts.evaluation.on_caption False
+done
+
+
+##################################################################
+echo 'UNIQUE SHORTCUTS'
+##################################################################
+declare -a models=(
+                "coco_vse_tune_img_enc_infonce_unique_shortcuts_shuffle"
+                )
+for MODEL in "${models[@]}"
+do
+   echo MODEL: $MODEL
+   MODEL_PATH="$MODELS_DIR/$MODEL/$MODEL_TYPE"
+   echo 'Evaluation.on_image: False; Evaluation.on_caption: False'
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data False \
+    --shortcuts.evaluation.on_image False \
+    --shortcuts.evaluation.on_caption False
+
+   echo 'Evaluation.on_image: True; Evaluation.on_caption: True'
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data False \
+    --shortcuts.evaluation.on_image True \
+    --shortcuts.evaluation.on_caption True
+done

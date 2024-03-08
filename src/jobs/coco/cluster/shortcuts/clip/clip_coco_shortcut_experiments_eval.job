@@ -1,0 +1,120 @@
+#!/bin/bash
+#SBATCH -t 2:00:00
+#SBATCH -N 1
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=25gb
+#SBATCH --gpus=1
+#SBATCH --partition=gpu
+#SBATCH -o clip_coco_shortcut_experiments_eval.out
+
+source <path to conda.sh>
+conda activate contrastive-shortcuts
+
+MODELS_DIR=<path to model checkpoint dir>
+EVAL_SCRIPT_PATH=./src/evaluation.py
+
+
+##################################################################
+echo 'BASELINE clip fine-tuned on COCO'
+##################################################################
+echo 'Evaluation.on_image: False; Evaluation.on_caption: False'
+
+MODEL=coco_clip_baseline_finetune
+echo MODEL: $MODEL
+MODEL_PATH=$MODELS_DIR/$MODEL/model_last.pth
+python $EVAL_SCRIPT_PATH \
+--path_to_model $MODEL_PATH \
+--shortcuts.evaluation.on_image False \
+--shortcuts.evaluation.on_caption False
+
+echo 'clip Zero-Shot'
+
+python $EVAL_SCRIPT_PATH \
+--path_to_model $MODEL_PATH \
+--zero_shot True \
+--copy_data False \
+--shortcuts.evaluation.on_image False \
+--shortcuts.evaluation.on_caption False
+
+##################################################################
+echo 'BASELINE - SHORTCUTS ON ONE MODALITY'
+##################################################################
+declare -a models=(
+                "coco_clip_images_only_shortcuts"
+                "coco_clip_captions_only_shortcuts"
+                )
+for MODEL in "${models[@]}"
+do
+   echo MODEL: $MODEL
+   MODEL_PATH=$MODELS_DIR/$MODEL/model_last.pth
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data False \
+    --shortcuts.evaluation.on_image False \
+    --shortcuts.evaluation.on_caption False
+done
+
+
+##################################################################
+echo 'BASELINES + UNIQUE SHORTCUTS'
+##################################################################
+declare -a models=(
+                "coco_clip_unique_shortcuts"
+                )
+for MODEL in "${models[@]}"
+do
+   echo MODEL: $MODEL
+   MODEL_PATH="$MODELS_DIR/$MODEL/model_last.pth"
+   echo 'Evaluation.on_image: False; Evaluation.on_caption: False'
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data False \
+    --shortcuts.evaluation.on_image False \
+    --shortcuts.evaluation.on_caption False
+
+   echo 'Evaluation.on_image: True; Evaluation.on_caption: True'
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data False \
+    --shortcuts.evaluation.on_image True \
+    --shortcuts.evaluation.on_caption True
+done
+
+
+##################################################################
+echo 'Number of bits shortcuts'
+##################################################################
+declare -a models=(
+                "coco_clip_bits_shortcuts_nb_0"
+                "coco_clip_bits_shortcuts_nb_1"
+                "coco_clip_bits_shortcuts_nb_2"
+                "coco_clip_bits_shortcuts_nb_3"
+                "coco_clip_bits_shortcuts_nb_4"
+                "coco_clip_bits_shortcuts_nb_5"
+                "coco_clip_bits_shortcuts_nb_6"
+                "coco_clip_bits_shortcuts_nb_7"
+                "coco_clip_bits_shortcuts_nb_8"
+                "coco_clip_bits_shortcuts_nb_9"
+                "coco_clip_bits_shortcuts_nb_10"
+                "coco_clip_bits_shortcuts_nb_11"
+                "coco_clip_bits_shortcuts_nb_12"
+                "coco_clip_bits_shortcuts_nb_13"
+                )
+for MODEL in "${models[@]}"
+do
+   echo MODEL: $MODEL
+   MODEL_PATH="$MODELS_DIR/$MODEL/model_last.pth"
+   echo 'Evaluation.on_image: False; Evaluation.on_caption: False'
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data False \
+    --shortcuts.evaluation.on_image False \
+    --shortcuts.evaluation.on_caption False
+
+   echo 'Evaluation.on_image: True; Evaluation.on_caption: True'
+   python $EVAL_SCRIPT_PATH \
+    --path_to_model $MODEL_PATH \
+    --copy_data False \
+    --shortcuts.evaluation.on_image True \
+    --shortcuts.evaluation.on_caption True
+done

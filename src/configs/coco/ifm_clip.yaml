@@ -1,0 +1,94 @@
+dataset:
+  name: 'coco'
+  root: "./src/datasets"
+  img_path: "./src/datasets/coco-images"
+  annotation_file: 'dataset_coco.json'
+  annotation_path: "./src/datasets/annotations"
+  captions_per_image: 5
+  latent_target_file: 'coco_latent_targets.p'
+  vocab_path: './src/vocab/'
+  vocab_file: 'coco_vocab.pkl'
+
+experiment:
+  wandb_project: 'contrastive-shortcuts'
+  entity: ''
+  experiment_name: 'coco-baseline-clip'
+  wandb_dir: './src/out/wandb'
+  out_dir: './src/out'
+  cache_dir: './src/out/cache'
+  development: False
+  store_best_validation_model: False
+
+dataloader:
+  batch_size: 256
+  eval_batch_size: 64
+  num_workers: 10
+  crop_size: 224
+
+criterion:
+  name: 'infonce' # [infonce, triplet]
+  temperature: # If None (i.e., empty), use temperature from CLIP (if CLIP is trained)
+  tune_temperature: False
+  alpha: 0.2 # for triplet loss
+  reconstruction_metric: 'cosine'
+  ifm: # implicit feature modification (IFM)
+    use_ifm: False
+    epsilon: 0.1
+
+reconstruction_constraint:
+    use_constraint: False
+    alpha: 0.90
+    bound:  0.1
+    start_val: 1.
+    max: 100.
+
+model:
+  image_caption_encoder:
+    name: "clip" # [clip, VSE, BASE]
+    model_name: "RN50" # resnet152: VSE/BASE | RN50 / ViT-B/32 : CLIP
+    train: True
+    train_img_encoder: True
+    train_cap_encoder: True # not used at the moment
+    embed_dim: 1024
+    word_dim: 300
+    num_gru_layers: 1
+    img_pooling: 'avg' # [attention, avg]
+  target_decoder:
+    decode_target: False
+    reconstruction_dim: 768
+    hidden_features: 1024
+
+training:
+  model_save_file: model_last.pth
+  best_model_file: model_best.pth
+  n_epochs: 5
+  log_step: 100
+  grad_clip: 2
+  val_epochs: 1
+  use_fp16: False
+
+optimizer:
+  name: 'adamw'
+  learning_rate: 2e-5
+  weight_decay: 0.0
+  warmup_steps: 100
+
+shortcuts:
+  use_shortcuts: False # set to True to use shortcuts
+  n_digits: 6 # represents the number of MNIST images
+  random_number: True
+  training:
+    on_image: True
+    on_caption: True
+  evaluation:
+    on_image: False
+    on_caption: False
+  bits:
+    use_bits: False
+    n_bits: 8 # matches batch size of 256
+    random: True
+
+lr_scheduler:
+    name: 'cosine_annealing' # [stepLR, cosine_annealing]
+    step_size: 15
+    gamma: 0.1

@@ -1,0 +1,37 @@
+--experiment.experiment_name f30k_clip_baseline_finetune
+--experiment.experiment_name f30k_clip_baseline_finetune_rerun
+--experiment.experiment_name f30k_clip_baseline_finetune_reun2
+--experiment.experiment_name f30k_clip_captions_only_shortcuts_shuffle   --shortcuts.use_shortcuts True --shortcuts.training.on_image False
+--experiment.experiment_name f30k_clip_images_only_shortcuts_shuffle     --shortcuts.use_shortcuts True --shortcuts.training.on_caption False
+--experiment.experiment_name f30k_clip_unique_shortcuts_shuffle          --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_clip_unique_shortcuts_temp_005 --shortcuts.use_shortcuts True --criterion.temperature 0.05
+--experiment.experiment_name f30k_clip_unique_shortcuts_temp_01  --shortcuts.use_shortcuts True --criterion.temperature 0.1
+--experiment.experiment_name f30k_clip_unique_shortcuts_temp_02  --shortcuts.use_shortcuts True --criterion.temperature 0.2
+--experiment.experiment_name f30k_clip_unique_shortcuts_temp_05  --shortcuts.use_shortcuts True --criterion.temperature 0.5
+--experiment.experiment_name f30k_clip_baseline_finetune_temp_005 --criterion.temperature 0.05
+--experiment.experiment_name f30k_clip_baseline_finetune_temp_01  --criterion.temperature 0.1
+--experiment.experiment_name f30k_clip_baseline_finetune_temp_02  --criterion.temperature 0.2
+--experiment.experiment_name f30k_clip_baseline_finetune_temp_05  --criterion.temperature 0.5
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_0       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 0
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_1       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 1
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_2       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 2
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_3       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 3
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_4       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 4
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_5       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 5
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_6       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 6
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_7       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 7
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_8       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 8
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_9       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 9
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_10       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 10
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_11       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 11
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_12       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 12
+--experiment.experiment_name f30k_clip_bits_shortcuts_nb_13       --shortcuts.use_shortcuts True --shortcuts.bits.use_bits True --shortcuts.bits.n_bits 13
+--experiment.experiment_name f30k_clip_unique_shortcuts_10_epochs --shortcuts.use_shortcuts True --training.n_epochs 10
+--experiment.experiment_name f30k_clip_baseline_finetune_10_epochs --training.n_epochs 10
+--experiment.experiment_name f30k_clip_baseline_finetune_vit --model.image_caption_encoder.model_name ViT-B/32 --model.image_caption_encoder.embed_dim 512
+--experiment.experiment_name f30k_clip_baseline_finetune_vit_unique_shortcuts --shortcuts.use_shortcuts True --model.image_caption_encoder.model_name ViT-B/32 --model.image_caption_encoder.embed_dim 512
+--experiment.experiment_name f30k_clip_baseline_finetune_step_rl --lr_scheduler.name stepLR
+--experiment.experiment_name f30k_clip_unique_shortcuts_step_rl --shortcuts.use_shortcuts True --lr_scheduler.name stepLR
+--experiment.experiment_name f30k_clip_baseline_ifm --criterion.imf.use_imf True
+--experiment.experiment_name f30k_clip_unique_shortcuts_ifm --criterion.imf.use_imf True --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_clip_baseline_token_probing --model.probing_layer.caption_probing True

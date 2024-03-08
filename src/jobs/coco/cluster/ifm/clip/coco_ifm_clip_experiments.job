@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -t 04:00:00
+#SBATCH -N 1
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=50gb
+#SBATCH --gpus=1
+#SBATCH --partition=gpu
+#SBATCH --array=1-12%4
+
+source <path to conda env>
+conda activate contrastive-shortcuts
+
+HPARAMS_FILE=$(pwd)/coco_ifm_clip_hyperparams.txt
+
+cd <path to project root>
+python ./src/trainer.py --yaml_file ./src/configs/coco/ifm_clip.yaml --wandb_user <wand username> $(head -$SLURM_ARRAY_TASK_ID $HPARAMS_FILE | tail -1)

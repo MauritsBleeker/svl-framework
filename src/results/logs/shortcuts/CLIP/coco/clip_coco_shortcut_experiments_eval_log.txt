@@ -1,0 +1,326 @@
+CLIP FINE-TUNED on COCO
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+MODEL: coco_clip_baseline_finetune
+2023-06-28 14:59:35,512 Loading the test evaluation set
+2023-06-28 14:59:35,677 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:00:48,573 Image to text (r@1, r@5, r@10, medr, meanr): 63.7, 85.4, 92.0, 1.0, 4.6
+2023-06-28 15:00:48,574 Text to image (r@1, r@5, r@10, medr, meanr): 46.1, 74.7, 83.9, 2.0, 10.6
+2023-06-28 15:00:48,574 Recall sum: 445.88
+2023-06-28 15:00:48,574 Image to text r-precision: 0.45
+
+CLIP Zero-Shot
+
+2023-06-28 15:01:03,394 Loading the test evaluation set
+2023-06-28 15:01:03,597 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:02:15,491 Image to text (r@1, r@5, r@10, medr, meanr): 48.9, 72.8, 82.2, 2.0, 9.4
+2023-06-28 15:02:15,492 Text to image (r@1, r@5, r@10, medr, meanr): 28.5, 53.0, 64.6, 5.0, 26.7
+2023-06-28 15:02:15,492 Recall sum: 350.08
+2023-06-28 15:02:15,492 Image to text r-precision: 0.33
+
+BASELINE - SHORTCUTS ON ONE MODALITY
+
+MODEL: coco_clip_images_only_shortcuts
+2023-06-28 15:02:32,793 Loading the test evaluation set
+2023-06-28 15:02:33,121 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:03:45,503 Image to text (r@1, r@5, r@10, medr, meanr): 63.4, 86.2, 92.5, 1.0, 4.6
+2023-06-28 15:03:45,505 Text to image (r@1, r@5, r@10, medr, meanr): 46.4, 74.7, 84.0, 2.0, 10.8
+2023-06-28 15:03:45,505 Recall sum: 447.23
+2023-06-28 15:03:45,505 Image to text r-precision: 0.45
+MODEL: coco_clip_captions_only_shortcuts
+2023-06-28 15:04:02,808 Loading the test evaluation set
+2023-06-28 15:04:03,143 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:05:15,335 Image to text (r@1, r@5, r@10, medr, meanr): 63.8, 85.5, 91.7, 1.0, 4.8
+2023-06-28 15:05:15,336 Text to image (r@1, r@5, r@10, medr, meanr): 45.8, 73.9, 83.3, 2.0, 11.3
+2023-06-28 15:05:15,336 Recall sum: 444.00
+2023-06-28 15:05:15,336 Image to text r-precision: 0.45
+
+BASELINES + UNIQUE SHORTCUTS
+
+MODEL: coco_clip_unique_shortcuts
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:05:32,952 Loading the test evaluation set
+2023-06-28 15:05:33,274 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:06:44,936 Image to text (r@1, r@5, r@10, medr, meanr): 13.6, 33.0, 44.2, 14.0, 97.4
+2023-06-28 15:06:44,937 Text to image (r@1, r@5, r@10, medr, meanr): 8.4, 24.3, 35.0, 22.0, 64.2
+2023-06-28 15:06:44,937 Recall sum: 158.39
+2023-06-28 15:06:44,937 Image to text r-precision: 0.11
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:06:59,386 Loading the test evaluation set
+2023-06-28 15:06:59,707 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:08:11,101 Image to text (r@1, r@5, r@10, medr, meanr): 100.0, 100.0, 100.0, 1.0, 1.0
+2023-06-28 15:08:11,102 Text to image (r@1, r@5, r@10, medr, meanr): 100.0, 100.0, 100.0, 1.0, 1.0
+2023-06-28 15:08:11,102 Recall sum: 599.93
+2023-06-28 15:08:11,102 Image to text r-precision: 1.00
+
+Number of bits shortcuts
+
+MODEL: coco_clip_bits_shortcuts_nb_0
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:08:28,567 Loading the test evaluation set
+2023-06-28 15:08:28,888 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:09:41,230 Image to text (r@1, r@5, r@10, medr, meanr): 64.2, 86.6, 92.8, 1.0, 4.7
+2023-06-28 15:09:41,231 Text to image (r@1, r@5, r@10, medr, meanr): 46.7, 74.9, 84.4, 2.0, 11.1
+2023-06-28 15:09:41,231 Recall sum: 449.48
+2023-06-28 15:09:41,231 Image to text r-precision: 0.46
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:09:55,475 Loading the test evaluation set
+2023-06-28 15:09:55,805 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:11:09,041 Image to text (r@1, r@5, r@10, medr, meanr): 62.9, 85.7, 92.3, 1.0, 4.8
+2023-06-28 15:11:09,043 Text to image (r@1, r@5, r@10, medr, meanr): 46.0, 74.4, 84.0, 2.0, 11.4
+2023-06-28 15:11:09,043 Recall sum: 445.21
+2023-06-28 15:11:09,043 Image to text r-precision: 0.44
+
+MODEL: coco_clip_bits_shortcuts_nb_1
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:11:26,296 Loading the test evaluation set
+2023-06-28 15:11:26,617 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:12:38,963 Image to text (r@1, r@5, r@10, medr, meanr): 62.7, 85.8, 92.1, 1.0, 4.5
+2023-06-28 15:12:38,965 Text to image (r@1, r@5, r@10, medr, meanr): 45.5, 74.2, 83.7, 2.0, 11.1
+2023-06-28 15:12:38,965 Recall sum: 443.94
+2023-06-28 15:12:38,965 Image to text r-precision: 0.45
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:12:53,063 Loading the test evaluation set
+2023-06-28 15:12:53,369 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:14:06,507 Image to text (r@1, r@5, r@10, medr, meanr): 69.8, 90.6, 95.4, 1.0, 2.9
+2023-06-28 15:14:06,508 Text to image (r@1, r@5, r@10, medr, meanr): 53.9, 82.4, 90.4, 1.0, 6.2
+2023-06-28 15:14:06,509 Recall sum: 482.58
+2023-06-28 15:14:06,509 Image to text r-precision: 0.52
+
+MODEL: coco_clip_bits_shortcuts_nb_2
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:14:23,833 Loading the test evaluation set
+2023-06-28 15:14:24,154 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:15:36,153 Image to text (r@1, r@5, r@10, medr, meanr): 61.2, 84.6, 91.2, 1.0, 4.5
+2023-06-28 15:15:36,154 Text to image (r@1, r@5, r@10, medr, meanr): 44.6, 73.4, 83.2, 2.0, 10.8
+2023-06-28 15:15:36,154 Recall sum: 438.21
+2023-06-28 15:15:36,155 Image to text r-precision: 0.44
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:15:49,652 Loading the test evaluation set
+2023-06-28 15:15:49,976 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:17:02,848 Image to text (r@1, r@5, r@10, medr, meanr): 77.1, 94.8, 97.9, 1.0, 1.9
+2023-06-28 15:17:02,849 Text to image (r@1, r@5, r@10, medr, meanr): 62.6, 89.2, 95.4, 1.0, 3.6
+2023-06-28 15:17:02,850 Recall sum: 516.93
+2023-06-28 15:17:02,850 Image to text r-precision: 0.61
+
+MODEL: coco_clip_bits_shortcuts_nb_3
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:17:20,116 Loading the test evaluation set
+2023-06-28 15:17:20,443 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:18:32,452 Image to text (r@1, r@5, r@10, medr, meanr): 60.1, 83.6, 90.2, 1.0, 5.1
+2023-06-28 15:18:32,454 Text to image (r@1, r@5, r@10, medr, meanr): 43.4, 72.1, 82.5, 2.0, 11.6
+2023-06-28 15:18:32,454 Recall sum: 431.92
+2023-06-28 15:18:32,454 Image to text r-precision: 0.42
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:18:46,155 Loading the test evaluation set
+2023-06-28 15:18:46,488 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:19:59,292 Image to text (r@1, r@5, r@10, medr, meanr): 84.2, 97.3, 99.1, 1.0, 1.5
+2023-06-28 15:19:59,294 Text to image (r@1, r@5, r@10, medr, meanr): 70.8, 94.5, 98.2, 1.0, 2.4
+2023-06-28 15:19:59,294 Recall sum: 544.21
+2023-06-28 15:19:59,294 Image to text r-precision: 0.68
+
+MODEL: coco_clip_bits_shortcuts_nb_4
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:20:16,522 Loading the test evaluation set
+2023-06-28 15:20:16,854 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:21:28,996 Image to text (r@1, r@5, r@10, medr, meanr): 57.4, 82.2, 89.9, 1.0, 5.6
+2023-06-28 15:21:28,998 Text to image (r@1, r@5, r@10, medr, meanr): 41.6, 70.5, 81.0, 2.0, 11.9
+2023-06-28 15:21:28,998 Recall sum: 422.64
+2023-06-28 15:21:28,998 Image to text r-precision: 0.40
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:21:42,641 Loading the test evaluation set
+2023-06-28 15:21:42,969 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:22:56,018 Image to text (r@1, r@5, r@10, medr, meanr): 88.5, 98.7, 99.7, 1.0, 1.3
+2023-06-28 15:22:56,019 Text to image (r@1, r@5, r@10, medr, meanr): 77.8, 97.5, 99.3, 1.0, 1.7
+2023-06-28 15:22:56,019 Recall sum: 561.54
+2023-06-28 15:22:56,019 Image to text r-precision: 0.75
+
+MODEL: coco_clip_bits_shortcuts_nb_5
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:23:13,220 Loading the test evaluation set
+2023-06-28 15:23:13,536 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:24:25,792 Image to text (r@1, r@5, r@10, medr, meanr): 54.5, 79.8, 88.6, 1.0, 6.6
+2023-06-28 15:24:25,794 Text to image (r@1, r@5, r@10, medr, meanr): 39.7, 68.8, 79.7, 2.0, 12.9
+2023-06-28 15:24:25,794 Recall sum: 411.07
+2023-06-28 15:24:25,794 Image to text r-precision: 0.39
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:24:39,418 Loading the test evaluation set
+2023-06-28 15:24:39,749 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:25:52,767 Image to text (r@1, r@5, r@10, medr, meanr): 91.7, 99.5, 99.9, 1.0, 1.2
+2023-06-28 15:25:52,769 Text to image (r@1, r@5, r@10, medr, meanr): 83.9, 99.0, 99.6, 1.0, 1.4
+2023-06-28 15:25:52,769 Recall sum: 573.54
+2023-06-28 15:25:52,769 Image to text r-precision: 0.81
+
+MODEL: coco_clip_bits_shortcuts_nb_6
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:26:09,951 Loading the test evaluation set
+2023-06-28 15:26:10,275 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:27:22,289 Image to text (r@1, r@5, r@10, medr, meanr): 53.2, 78.5, 86.6, 1.0, 7.7
+2023-06-28 15:27:22,290 Text to image (r@1, r@5, r@10, medr, meanr): 37.5, 66.3, 77.4, 2.0, 14.2
+2023-06-28 15:27:22,291 Recall sum: 399.47
+2023-06-28 15:27:22,291 Image to text r-precision: 0.37
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:27:35,811 Loading the test evaluation set
+2023-06-28 15:27:36,131 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:28:49,023 Image to text (r@1, r@5, r@10, medr, meanr): 95.2, 99.7, 99.9, 1.0, 1.1
+2023-06-28 15:28:49,025 Text to image (r@1, r@5, r@10, medr, meanr): 88.7, 99.5, 99.8, 1.0, 1.2
+2023-06-28 15:28:49,025 Recall sum: 582.80
+2023-06-28 15:28:49,025 Image to text r-precision: 0.86
+
+MODEL: coco_clip_bits_shortcuts_nb_7
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:29:06,144 Loading the test evaluation set
+2023-06-28 15:29:06,468 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:30:19,009 Image to text (r@1, r@5, r@10, medr, meanr): 48.1, 75.1, 84.4, 2.0, 8.2
+2023-06-28 15:30:19,010 Text to image (r@1, r@5, r@10, medr, meanr): 34.7, 63.5, 75.3, 3.0, 15.4
+2023-06-28 15:30:19,010 Recall sum: 381.19
+2023-06-28 15:30:19,010 Image to text r-precision: 0.34
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:30:32,998 Loading the test evaluation set
+2023-06-28 15:30:33,326 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:31:46,207 Image to text (r@1, r@5, r@10, medr, meanr): 95.8, 99.8, 100.0, 1.0, 1.1
+2023-06-28 15:31:46,208 Text to image (r@1, r@5, r@10, medr, meanr): 91.7, 99.7, 99.9, 1.0, 1.1
+2023-06-28 15:31:46,209 Recall sum: 586.87
+2023-06-28 15:31:46,209 Image to text r-precision: 0.90
+
+MODEL: coco_clip_bits_shortcuts_nb_8
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:32:03,497 Loading the test evaluation set
+2023-06-28 15:32:03,819 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:33:15,965 Image to text (r@1, r@5, r@10, medr, meanr): 44.9, 71.6, 81.8, 2.0, 9.9
+2023-06-28 15:33:15,966 Text to image (r@1, r@5, r@10, medr, meanr): 32.0, 60.2, 72.4, 3.0, 17.0
+2023-06-28 15:33:15,966 Recall sum: 363.01
+2023-06-28 15:33:15,966 Image to text r-precision: 0.32
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:33:30,229 Loading the test evaluation set
+2023-06-28 15:33:30,554 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:34:42,868 Image to text (r@1, r@5, r@10, medr, meanr): 96.1, 99.8, 100.0, 1.0, 1.1
+2023-06-28 15:34:42,870 Text to image (r@1, r@5, r@10, medr, meanr): 92.3, 99.8, 99.9, 1.0, 1.1
+2023-06-28 15:34:42,870 Recall sum: 588.04
+2023-06-28 15:34:42,870 Image to text r-precision: 0.91
+
+MODEL: coco_clip_bits_shortcuts_nb_9
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:35:00,293 Loading the test evaluation set
+2023-06-28 15:35:00,611 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:36:12,932 Image to text (r@1, r@5, r@10, medr, meanr): 41.2, 68.8, 79.0, 2.0, 13.3
+2023-06-28 15:36:12,934 Text to image (r@1, r@5, r@10, medr, meanr): 29.3, 57.0, 69.5, 4.0, 18.8
+2023-06-28 15:36:12,934 Recall sum: 344.83
+2023-06-28 15:36:12,934 Image to text r-precision: 0.29
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:36:27,212 Loading the test evaluation set
+2023-06-28 15:36:27,531 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:37:40,393 Image to text (r@1, r@5, r@10, medr, meanr): 96.1, 99.6, 99.9, 1.0, 1.1
+2023-06-28 15:37:40,395 Text to image (r@1, r@5, r@10, medr, meanr): 92.1, 99.9, 100.0, 1.0, 1.1
+2023-06-28 15:37:40,395 Recall sum: 587.55
+2023-06-28 15:37:40,395 Image to text r-precision: 0.91
+
+MODEL: coco_clip_bits_shortcuts_nb_10
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:37:57,849 Loading the test evaluation set
+2023-06-28 15:37:58,170 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:39:10,321 Image to text (r@1, r@5, r@10, medr, meanr): 38.0, 64.6, 75.7, 3.0, 14.3
+2023-06-28 15:39:10,322 Text to image (r@1, r@5, r@10, medr, meanr): 25.8, 53.6, 66.4, 5.0, 20.5
+2023-06-28 15:39:10,322 Recall sum: 323.98
+2023-06-28 15:39:10,322 Image to text r-precision: 0.27
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:39:24,425 Loading the test evaluation set
+2023-06-28 15:39:24,746 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:40:37,000 Image to text (r@1, r@5, r@10, medr, meanr): 95.7, 99.6, 100.0, 1.0, 1.1
+2023-06-28 15:40:37,002 Text to image (r@1, r@5, r@10, medr, meanr): 91.7, 100.0, 100.0, 1.0, 1.1
+2023-06-28 15:40:37,002 Recall sum: 586.98
+2023-06-28 15:40:37,002 Image to text r-precision: 0.91
+
+MODEL: coco_clip_bits_shortcuts_nb_11
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:40:54,265 Loading the test evaluation set
+2023-06-28 15:40:54,594 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:42:07,089 Image to text (r@1, r@5, r@10, medr, meanr): 35.9, 61.4, 72.3, 3.0, 17.8
+2023-06-28 15:42:07,090 Text to image (r@1, r@5, r@10, medr, meanr): 24.5, 50.6, 63.3, 5.0, 23.1
+2023-06-28 15:42:07,090 Recall sum: 308.08
+2023-06-28 15:42:07,090 Image to text r-precision: 0.25
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:42:20,866 Loading the test evaluation set
+2023-06-28 15:42:21,190 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:43:33,630 Image to text (r@1, r@5, r@10, medr, meanr): 97.1, 99.9, 100.0, 1.0, 1.1
+2023-06-28 15:43:33,631 Text to image (r@1, r@5, r@10, medr, meanr): 95.0, 100.0, 100.0, 1.0, 1.1
+2023-06-28 15:43:33,631 Recall sum: 592.06
+2023-06-28 15:43:33,631 Image to text r-precision: 0.94
+
+MODEL: coco_clip_bits_shortcuts_nb_12
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 16:20:12,435 Loading the test evaluation set
+2023-06-28 16:20:12,730 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 16:21:25,522 Image to text (r@1, r@5, r@10, medr, meanr): 31.4, 57.6, 69.7, 4.0, 22.5
+2023-06-28 16:21:25,523 Text to image (r@1, r@5, r@10, medr, meanr): 22.4, 47.2, 59.8, 6.0, 27.3
+2023-06-28 16:21:25,523 Recall sum: 288.11
+2023-06-28 16:21:25,523 Image to text r-precision: 0.22
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 16:21:39,705 Loading the test evaluation set
+2023-06-28 16:21:40,001 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 16:22:52,245 Image to text (r@1, r@5, r@10, medr, meanr): 98.2, 99.9, 100.0, 1.0, 1.0
+2023-06-28 16:22:52,245 Text to image (r@1, r@5, r@10, medr, meanr): 97.2, 100.0, 100.0, 1.0, 1.0
+2023-06-28 16:22:52,245 Recall sum: 595.32
+2023-06-28 16:22:52,245 Image to text r-precision: 0.97
+
+MODEL: coco_clip_bits_shortcuts_nb_13
+
+Evaluation.on_image: False; Evaluation.on_caption: False
+2023-06-28 15:43:51,067 Loading the test evaluation set
+2023-06-28 15:43:51,393 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:45:02,966 Image to text (r@1, r@5, r@10, medr, meanr): 28.8, 53.2, 64.6, 5.0, 27.3
+2023-06-28 15:45:02,969 Text to image (r@1, r@5, r@10, medr, meanr): 19.9, 44.1, 56.8, 7.0, 30.2
+2023-06-28 15:45:02,969 Recall sum: 267.51
+2023-06-28 15:45:02,969 Image to text r-precision: 0.20
+Evaluation.on_image: True; Evaluation.on_caption: True
+2023-06-28 15:45:16,616 Loading the test evaluation set
+2023-06-28 15:45:16,945 --- Start evaluation ---
+Image encoder parameters: requires_grad is switched to:  True
+2023-06-28 15:46:29,088 Image to text (r@1, r@5, r@10, medr, meanr): 99.2, 100.0, 100.0, 1.0, 1.0
+2023-06-28 15:46:29,090 Text to image (r@1, r@5, r@10, medr, meanr): 98.3, 100.0, 100.0, 1.0, 1.0
+2023-06-28 15:46:29,090 Recall sum: 597.40
+2023-06-28 15:46:29,090 Image to text r-precision: 0.98

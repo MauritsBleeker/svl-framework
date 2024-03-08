@@ -1,0 +1,8 @@
+--experiment.experiment_name f30k_vse_baseline_infonce_rerun1 --criterion.name infonce
+--experiment.experiment_name f30k_vse_baseline_infonce_rerun2 --criterion.name infonce
+--experiment.experiment_name f30k_vse_infonce_ltd_b020_rerun1 --criterion.name infonce --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.20
+--experiment.experiment_name f30k_vse_infonce_ltd_b020_rerun2 --criterion.name infonce --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.20
+--experiment.experiment_name f30k_vse_infonce_ltd_b005_unique_shortcuts_rerun1 --criterion.name infonce --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.05 --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_vse_infonce_ltd_b005_unique_shortcuts_rerun2 --criterion.name infonce --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.05 --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_vse_baseline_infonce_unique_shortcuts_rerun1 --criterion.name infonce --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_vse_baseline_infonce_unique_shortcuts_rerun2 --criterion.name infonce --shortcuts.use_shortcuts True

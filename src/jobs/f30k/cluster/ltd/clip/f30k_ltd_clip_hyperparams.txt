@@ -1,0 +1,13 @@
+--experiment.experiment_name f30k_clip_baseline_finetune
+--experiment.experiment_name f30k_clip_ltd --model.target_decoder.decode_target True
+--experiment.experiment_name f30k_clip_ltd_constraint_b03  --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.3
+--experiment.experiment_name f30k_clip_ltd_constraint_b025 --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.25
+--experiment.experiment_name f30k_clip_ltd_constraint_b02  --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True
+--experiment.experiment_name f30k_clip_ltd_constraint_b015 --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.15
+--experiment.experiment_name f30k_clip_ltd_constraint_b01 --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.1
+--experiment.experiment_name f30k_clip_ltd_constraint_b005 --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.05
+--experiment.experiment_name f30k_clip_ltd_constraint_b025_unique_shortcuts --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.25 --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_clip_ltd_constraint_b020_unique_shortcuts --model.target_decoder.decode_target True --reconstruction_constraint.use_constraint True --reconstruction_constraint.bound 0.2 --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_clip_ltd_unique_shortcuts --model.target_decoder.decode_target True --shortcuts.use_shortcuts True
+--experiment.experiment_name f30k_clip_ltd_unique_shortcuts_ltd --model.target_decoder.decode_target True --shortcuts.use_shortcuts True --model.target_decoder.decode_target True
+--experiment.experiment_name f30k_clip_baseline_finetune_unique_shortcuts --shortcuts.use_shortcuts True
