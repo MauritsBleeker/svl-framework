@@ -1,3 +1,4 @@
+[![arxiv-link](https://img.shields.io/badge/Paper-PDF-red?style=flat&logo=arXiv&logoColor=red)](https://arxiv.org/abs/2402.17510)
 
 # Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning
 
