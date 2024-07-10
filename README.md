@@ -2,11 +2,15 @@
 
 # Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning
 
-This repository contains the code for the ArXiv preprint [Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning](https://arxiv.org/abs/2402.17510),  by [Maurits Bleeker](https://mauritsbleeker.github.io)<sup>1</sup>, [Mariya Hendriksen](https://mariyahendriksen.github.io)<sup>1</sup>, [Andrew Yates](https://andrewyates.net)<sup>1</sup>, and [Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/)<sup>1</sup>.
+This repository contains the code for the TMLR paper [Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning](https://arxiv.org/abs/2402.17510),  by [Maurits Bleeker](https://mauritsbleeker.github.io)<sup>1</sup>, [Mariya Hendriksen](https://mariyahendriksen.github.io)<sup>1</sup>, [Andrew Yates](https://andrewyates.net)<sup>1</sup>, and [Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/)<sup>1</sup>.
 
 The implementation builds upon the codebase of [Latent Target Decoding](https://github.com/MauritsBleeker/reducing-predictive-feature-suppression/).
 
 <sup>1</sup>University of Amsterdam, The Netherlands
+
+## News
+ - Jul 2024: The paper has been accepted by TMLR
+ - Feb 2024: Initial arXiv release
 
 ## Requirements
 
@@ -89,7 +93,8 @@ If you find this repository helpful, feel free to cite our paper "[Demonstrating
 @article{bleeker-2024-demonstrating,
   title={Demonstrating and Reducing Shortcuts in Vision-Language Representation Learning},
   author={Bleeker, Maurits and Hendriksen, Mariya and Yates, Andrew and de Rijke, Maarten},
-  journal={arXiv preprint arXiv:2402.17510},
+  journal={Transactions on Machine Learning Research},
+  url={https://openreview.net/forum?id=gfANevPraH},
   year={2024}
 }
 ```
